@@ -2,7 +2,7 @@ package converter;
 
 /**
 * Represents different units of weight.
-* Includes pounds, ounces, kilograms, and grams
+* Includes pounds, ounces, kilograms, and grams.
 */
 public enum WeightUnit {
 	
