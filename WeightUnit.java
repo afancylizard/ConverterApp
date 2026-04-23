@@ -4,7 +4,7 @@ package converter;
 * Represents different units of weight.
 * Includes pounds, ounces, kilograms, and grams.
 */
-public enum WeightUnit {
+public enum WeightUnit implements Unit {
 	
 	POUNDS,
 	
@@ -12,6 +12,8 @@ public enum WeightUnit {
 	
 	KILOGRAMS,
 	
-	GRAMS
+	GRAMS;
+	
+	public String getName() { return this.name(); }
 
 }
