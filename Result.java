@@ -25,7 +25,15 @@ public class Result extends Measurement{
 	private Unit fromUnit; 
     private Unit toUnit;
 	
-	
+    /**
+	 * Constructs a Result with the specified values.
+	 *
+	 * @param value 	The final value after the conversion
+	 * @param measurementType	The type of measurement (Length, Weight, Time)
+	 * @param fromValue		The starting value that the user inputed
+	 * @param fromUnit		The starting unit that the user specified
+	 * @param toUnit		The ending unit that the user wants to convert to
+	 */
 	public Result(double value, MeasurementType measurementType, double fromValue, Unit fromUnit, Unit toUnit) {
 		super(value);
 		this.measurement = measurementType;
@@ -36,7 +44,11 @@ public class Result extends Measurement{
 	
 
 	
-	
+	 /**
+	  * Used for displaying the result to the user
+
+
+		 */
 	@Override
     public String toString() {
         return String.format("%.2f %s is equal to %.2f %s", 
@@ -44,6 +56,50 @@ public class Result extends Measurement{
     }
 	
 	
+	
+	
+	
+	
+	  /**
+	 * @return the measurement
+	 */
+	public MeasurementType getMeasurement() {
+		return measurement;
+	}
+
+
+
+	 /**
+ 	 * @return the fromValue
+ 	 */
+	 public double getFromValue() {
+		 return fromValue;
+	 }
+
+
+
+	 /**
+ 	 * @return the fromUnit
+ 	 */
+	 public Unit getFromUnit() {
+		 return fromUnit;
+	 }
+
+
+
+	 /**
+ 	 * @return the toUnit
+ 	 */
+	 public Unit getToUnit() {
+		 return toUnit;
+	 }
+
+
+
+	  /**
+		 * Saves the value to the file on the users computer
+		 * if the file doesn't exist yet, it is created.
+		 */
 	public void saveToFile() {
 	    String fileName = "output.csv";
 	    
@@ -57,6 +113,10 @@ public class Result extends Measurement{
 	}
 	
 	
+	 /**
+	 * This is for retreiving all of the values that are stored
+	 * @return list of strings		list of result's .toString
+	 */
 	
 	public static List<String> getStoredResults() {
 		
