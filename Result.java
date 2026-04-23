@@ -2,6 +2,10 @@ package converter;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class Result extends Measurement{
@@ -50,6 +54,23 @@ public class Result extends Measurement{
 	    } catch (IOException e) {
 	        System.err.println("Did not work, error: " + e.getMessage());
 	    }
+	}
+	
+	
+	
+	public static List<String> getStoredResults() {
+		
+        String fileName = "output.csv";
+        
+        try {
+
+            return Files.readAllLines(Paths.get(fileName));
+            
+        } catch (IOException e) {
+
+            System.out.println("Save file does not exist yetr.");
+            return new ArrayList<>();
+        }
 	}
 
 }
