@@ -4,7 +4,7 @@ package converter;
  * Represents different units of time.
  * Includes seconds, minutes, hours, and days.
  */
-public enum TimeUnit {
+public enum TimeUnit implements Unit{
 	
 	SECONDS,
 	
@@ -12,6 +12,8 @@ public enum TimeUnit {
 	
 	HOURS,
 	
-	DAYS
+	DAYS;
+	
+	public String getName() { return this.name(); }
 
 }
